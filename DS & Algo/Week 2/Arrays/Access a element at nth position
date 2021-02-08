@@ -1,0 +1,12 @@
+class Solution:
+    def findNthDigit(self, n: int) -> int:
+        x, y = 9, 1
+        while n > x*y:
+            n -= (x*y)
+            x *= 10
+            y += 1
+        
+        val = int(10**(y-1) + (n/y));
+        n %= y
+        if n == 0: return (val-1)%10
+        return int(str(val)[n-1])
