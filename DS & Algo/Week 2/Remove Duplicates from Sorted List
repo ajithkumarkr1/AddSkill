@@ -1,0 +1,20 @@
+class Solution:
+    def deleteDuplicates(self, head: ListNode) -> ListNode:
+        
+        def delete_dupes(head):
+            
+			# if there's nothing to compare, just end the recursion
+            if not head or not head.next:
+                return
+                                      
+			# make sure to keep deleting any nodes where the next one's value is equal to the current value
+            while head.next and head.val == head.next.val:                    
+                head.next = head.next.next if head.next.next else None                    
+            
+			# recurse
+            delete_dupes(head.next)
+            
+        
+        delete_dupes(head)
+        
+        return head
