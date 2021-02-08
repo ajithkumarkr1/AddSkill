@@ -1,0 +1,24 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeElements(self, head: ListNode, val: int) -> ListNode:
+        if head==None:
+            return None
+        currentNode = ListNode(-1) #creating dummy node
+        currentNode.next = head
+        head = currentNode
+        #Linking the dummy node to the beginnning of the linked list
+        #The reason why we are creating a dummy node is because we don't want to miss cases where the first
+        #node of the linked list is equal to 'val'. This ensures that the code below works for all cases
+        
+        #traversing through the linked list
+        while currentNode.next: #This is to ensure we don't reach None of the Linked List
+            if currentNode.next.val == val:
+                currentNode.next = currentNode.next.next #skipping the element of 'val' value
+            else:
+                currentNode = currentNode.next
+        
+        return head.next #reason: we do not want the dummy node in our final linked list
