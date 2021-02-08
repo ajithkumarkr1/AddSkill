@@ -1,0 +1,4 @@
+class Solution:
+    def mySqrt(self, x):
+        return math.trunc(x**0.5)
+      #math.trunc(x) func to truncate the decimal part of x
