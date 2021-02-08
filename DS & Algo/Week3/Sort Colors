@@ -1,0 +1,26 @@
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        self.quicksort(nums, 0, len(nums) - 1)
+        
+    
+    def quicksort(self, arr, lo, hi) -> None:
+        if lo < hi:
+            p = self.partition(arr, lo, hi)
+            self.quicksort(arr, lo, p-1)
+            self.quicksort(arr, p+1, hi)
+            
+    
+    def partition(self, arr, lo, hi) -> int:
+        pivot = arr[hi]
+        i = lo
+        for j in range(lo, hi):
+            if arr[j] < pivot:
+                self.swap(arr, i, j)
+                i += 1
+        self.swap(arr, i, hi)
+        return i
+        
+    def swap(self, arr, i, j) -> None:
+        temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
