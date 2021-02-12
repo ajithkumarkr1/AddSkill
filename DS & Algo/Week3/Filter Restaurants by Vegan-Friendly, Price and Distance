@@ -1,0 +1,26 @@
+class Solution:
+    def filterRestaurants(self, restaurants: List[List[int]], veganFriendly: int, maxPrice: int, maxDistance: int) -> List[int]:
+        listx=[]
+        for i in restaurants:
+            if veganFriendly==1:
+                if i[2]==1 and i[3]<=maxPrice and i[4]<=maxDistance:
+                    listx.append(i)
+            elif veganFriendly==0:
+                if i[3]<=maxPrice and i[4]<=maxDistance:
+                    listx.append(i)
+        
+        
+        dicti={}
+        for i in listx:
+            if i[1] not in dicti:
+                dicti[i[1]]=[]
+                dicti[i[1]].append(i[0])
+                dicti[i[1]].sort(reverse=True)
+            else:
+                dicti[i[1]].append(i[0])
+                dicti[i[1]].sort(reverse=True)
+        k=sorted(dicti.items(),key=lambda x:x[0],reverse=True)
+        listy=[]
+        for i in k:
+            listy+=i[1]
+        return listy
