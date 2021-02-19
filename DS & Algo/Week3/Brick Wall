@@ -1,0 +1,17 @@
+class Solution:
+    def leastBricks(self, wall: List[List[int]]) -> int:
+        wallwidth = sum(wall[0])
+        wallheight = len(wall)
+        dic = {}
+        
+        for element in wall:
+            ans = 0
+            for width in element:
+                ans += width
+                if ans != wallwidth:
+                    dic[ans] = dic.get(ans, 0) + 1
+        
+        if len(dic) == 0: # to consider the condition when only one brick used every layer
+            return wallheight
+
+        return wallheight - max(dic.values())
