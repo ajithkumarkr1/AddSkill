@@ -1,0 +1,21 @@
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        
+        d = defaultdict(list)
+        stack = deque()
+        res = []
+        if root:
+            stack.append((root,1))
+            while stack:
+                n = stack.popleft()
+                d[n[1]].append(n[0].val)    
+
+                if n[0].left:
+                    stack.append((n[0].left, n[1] + 1))
+                if n[0].right:
+                    stack.append((n[0].right, n[1] + 1))
+
+            
+            for i in sorted(d.keys()):
+                res.append(d[i])
+        return res
