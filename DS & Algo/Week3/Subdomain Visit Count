@@ -1,0 +1,13 @@
+class Solution:
+    def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
+        domtocount = {}
+        for cpd in cpdomains:
+            num, dom = cpd.split(" ",1)
+            domtocount[dom] = domtocount.get(dom,0) + int(num)
+            while len(dom.split(".", 1)) > 1:
+                dom = dom.split(".", 1)[1]
+                domtocount[dom] = domtocount.get(dom,0) + int(num)
+        res =[]
+        for dom,count in domtocount.items():
+            res.append(str(count) +" " + str(dom))
+        return res
