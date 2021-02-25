@@ -1,0 +1,42 @@
+# N: length of formula
+# K: # of atoms
+
+class Solution:
+    def countOfAtoms(self, formula: str) -> str:
+        index, length = 0, len(formula)
+        stack = ['']
+        # scroll out all formula using stack
+        while index < length:
+            if formula[index] == '(':
+                index += 1
+                stack.append('')
+            elif formula[index] == ')':
+                index += 1
+                latest = stack.pop()
+                count = ''
+                while index < length and formula[index].isnumeric():
+                    count += formula[index]
+                    index += 1
+                stack[-1] = stack[-1] + (latest * int(count) if count else latest)
+            else:
+                stack[-1] += formula[index]
+                index += 1
+        hashTable = defaultdict(int)
+        index, output = 0, stack[-1]
+        length = len(output)
+        # Analyze the scrolled out formula by appending count at atom
+        while index < length:
+            key = output[index]
+            index += 1
+            while index < length and output[index].islower():
+                key += output[index]
+                index += 1
+            count = ''
+            while index < length and output[index].isnumeric():
+                count += output[index]
+                index += 1
+            hashTable[key] += (1 if count == '' else int(count))
+        # Sort atom by alpha
+        sortedKeys = list(sorted(hashTable.keys()))
+        # Generate output
+        return ''.join(['%s%d' % (key, hashTable[key]) if hashTable[key] > 1 else '%s' % key for key in sortedKeys])
