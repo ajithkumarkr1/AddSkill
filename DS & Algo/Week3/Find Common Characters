@@ -1,0 +1,20 @@
+from collections import Counter
+
+class Solution:
+    def commonChars(self, A: List[str]) -> List[str]:
+        c = Counter(A[0])
+        tmp = dict(c)
+        
+        for word in A[1:]:
+            new_tmp = {}
+            c = Counter(word)
+            for ch in c:
+                new_tmp[ch] = min(c[ch], tmp.get(ch, 0))
+            tmp = new_tmp
+            
+        sol = []
+        for ch in tmp:
+            for i in range(tmp[ch]):
+                sol.append(ch)
+                
+        return sol
