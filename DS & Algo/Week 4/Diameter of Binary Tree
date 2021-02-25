@@ -1,0 +1,16 @@
+class Solution:
+    def diameterOfBinaryTree(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+
+        leftSubTreeLongestPath = self.diameterOfBinaryTree(root.left)
+        rightSubTreeLongestPath = self.diameterOfBinaryTree(root.right)
+        
+        longestRightChain = root.right.val if root.right else 0
+        longestLeftChain = root.left.val if root.left else 0
+        
+        rootDiameter = longestRightChain + longestLeftChain
+        
+        root.val = max(longestRightChain, longestLeftChain) + 1
+        
+        return max(rootDiameter, max(leftSubTreeLongestPath, rightSubTreeLongestPath))
