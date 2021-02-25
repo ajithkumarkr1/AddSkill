@@ -1,0 +1,14 @@
+class Solution(object):
+    def isValidBST(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        def check_node(root, uplim, lolim):
+            if not root:
+                return True
+            if root.val <= lolim or root.val >= uplim:
+                return False
+            return check_node(root.left, root.val, lolim) and check_node(root.right, uplim, root.val)
+        
+        return check_node(root, float('inf'), float('-inf'))
