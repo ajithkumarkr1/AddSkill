@@ -1,0 +1,17 @@
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        #
+        return self.isSame(root.left,root.right)
+    
+    ## BFS    
+    def isSame(self,root1: TreeNode, root2: TreeNode) -> bool:
+        que = deque([(root1,root2)])
+        while que:
+            p,q = que.popleft()
+            if not p and not q: continue
+            if not p or not q: return False
+            if p.val != q.val: return False
+            else:
+                que.append((p.left,q.right))
+                que.append((p.right,q.left))
+        return True
