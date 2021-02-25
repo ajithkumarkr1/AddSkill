@@ -1,0 +1,10 @@
+class Solution:
+    def widthOfBinaryTree(self, root: TreeNode) -> int:
+        stack = [(root,1)]
+        max_length = 0
+        while stack:
+            divide_length = stack[-1][-1] - stack[0][-1] + 1
+            max_length = divide_length if divide_length > max_length else max_length
+            node_list = [((node[0].left,2*node[1] - 1),(node[0].right,2*node[1])) for node in stack]
+            stack = [node for pair in node_list for node in pair if node[0]]
+        return max_length
