@@ -1,0 +1,22 @@
+class BSTIterator(object):
+
+    def __init__(self, root):
+        """
+        :type root: TreeNode
+        """
+        a = lambda root: [] if not root else a(root.left)+[root.val]+a(root.right)
+        self.lst = deque(a(root))
+
+
+    def next(self):
+        """
+        :rtype: int
+        """
+        return self.lst.popleft()
+
+
+    def hasNext(self):
+        """
+        :rtype: bool
+        """
+        return bool(self.lst)
