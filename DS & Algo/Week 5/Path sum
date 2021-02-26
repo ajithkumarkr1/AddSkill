@@ -1,0 +1,12 @@
+class Solution:
+    def pathSum(self, root: TreeNode, targetSum: int) -> List[List[int]]:
+        if not root:return
+        stack = [(root,0,[])]
+        result = []
+        while stack:
+            for node in stack:
+                if not node[0].left and not node[0].right and node[1] + node[0].val == targetSum:  
+                    result.append(node[2]+[node[0].val])
+            node_pair = [((node[0].left,node[0].val + node[1],node[2] + [node[0].val]),(node[0].right,node[0].val + node[1],node[2] + [node[0].val])) for node in stack]
+            stack = [node for pair in node_pair for node in pair if node[0]]
+        return result
