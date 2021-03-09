@@ -1,0 +1,17 @@
+class Solution:
+    def distributeCoins(self, root: TreeNode) -> int:       
+        ans=0
+        def dfs(node,par):
+            nonlocal ans
+            if not node: return
+            dfs(node.left,node), dfs(node.right,node)
+            amount=0
+            if par:
+                amount=(node.val-1)*(node.val>1)-(1-node.val)*(node.val<=0)
+                par.val+=amount
+                node.val-=amount
+            
+            ans+=abs(amount)
+                
+        dfs(root,None)
+        return ans
