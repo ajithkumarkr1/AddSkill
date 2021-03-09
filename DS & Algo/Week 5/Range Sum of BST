@@ -1,0 +1,20 @@
+def rangeSumBST(self, root, L, R):
+    """
+    :type root: TreeNode
+    :type L: int
+    :type R: int
+    :rtype: int
+    """
+    def dfs(root,L,R):   
+        if root is None:
+            return []
+        if root.left:
+            dfs(root.left,L,R)
+        if root.val>=L and root.val<=R:
+            self.sum+=root.val
+        if root.right:
+            dfs(root.right,L,R)
+
+    self.sum=0
+    dfs(root,L,R)
+    return self.sum
