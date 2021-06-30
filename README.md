@@ -11,3 +11,4 @@
 |75|[ Sort Colors](https://leetcode.com/problems/sort-colors/)|[Python3](./solutions/75.%20Sort%20Colors.py)|32 ms|
 |121|[ Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)|[Python3](./solutions/121.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock.py)|1320 ms|
 |148|[ Sort List](https://leetcode.com/problems/sort-list/)|[Python3](./solutions/148.%20Sort%20List.py)|228 ms|
+|155|[ Min Stack](https://leetcode.com/problems/min-stack/)|[Python3](./solutions/155.%20Min%20Stack.py)|600 ms|
