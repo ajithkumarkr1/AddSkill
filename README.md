@@ -14,6 +14,7 @@
 |121|[ Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)|[Python3](./solutions/121.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock.py)|1320 ms|
 |148|[ Sort List](https://leetcode.com/problems/sort-list/)|[Python3](./solutions/148.%20Sort%20List.py)|228 ms|
 |155|[ Min Stack](https://leetcode.com/problems/min-stack/)|[Python3](./solutions/155.%20Min%20Stack.py)|600 ms|
+|191|[ Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)|[Python3](./solutions/191.%20Number%20of%201%20Bits.py)|32 ms|
 |206|[ Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)|[Python3](./solutions/206.%20Reverse%20Linked%20List.py)|24 ms|
 |234|[ Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)|[Python3](./solutions/234.%20Palindrome%20Linked%20List.py)|788 ms|
 |636|[ Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/)|[Python3](./solutions/636.%20Exclusive%20Time%20of%20Functions.py)|68 ms|
