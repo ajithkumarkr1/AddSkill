@@ -21,3 +21,4 @@
 |636|[ Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/)|[Python3](./solutions/636.%20Exclusive%20Time%20of%20Functions.py)|68 ms|
 |976|[ Largest Perimeter Triangle](https://leetcode.com/problems/largest-perimeter-triangle/)|[Python3](./solutions/976.%20Largest%20Perimeter%20Triangle.py)|184 ms|
 |1333|[ Filter Restaurants by Vegan-Friendly, Price and Distance](https://leetcode.com/problems/filter-restaurants-by-vegan-friendly-price-and-distance/)|[Python3](./solutions/1333.%20Filter%20Restaurants%20by%20Vegan-Friendly%2C%20Price%20and%20Distance.py)|328 ms|
+|1342|[ Number of Steps to Reduce a Number to Zero](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/)|[Python3](./solutions/1342.%20Number%20of%20Steps%20to%20Reduce%20a%20Number%20to%20Zero.py)|36 ms|
